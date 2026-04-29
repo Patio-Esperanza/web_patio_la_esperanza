@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Bloquear archivos internos que no aportan valor de indexación
+Disallow: /assets/js/
+Disallow: /assets/css/
+
+# Permitir explícitamente los recursos de imagen y media
+Allow: /assets/img/
+
+Sitemap: https://patiolaesperanza.com.mx/sitemap.xml

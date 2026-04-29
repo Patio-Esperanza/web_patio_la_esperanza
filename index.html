@@ -14,14 +14,19 @@
   <meta property="og:url" content="https://patiolaesperanza.com.mx/" />
   <meta property="og:title" content="Patio La Esperanza | Logística y Almacenaje de Contenedores" />
   <meta property="og:description" content="Centro logístico especializado en Lázaro Cárdenas, Michoacán. Resguardo, maniobras, transporte y asesoría aduanal para importadores y exportadores." />
-  <meta property="og:image" content="assets/img/Instalaciones.png" />
+  <meta property="og:image" content="https://patiolaesperanza.com.mx/assets/img/Instalaciones.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Instalaciones Patio La Esperanza — centro logístico en Lázaro Cárdenas" />
   <meta property="og:locale" content="es_MX" />
   <meta property="og:site_name" content="Patio La Esperanza" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@PatioLaEsperanza" />
   <meta name="twitter:title" content="Patio La Esperanza | Logística y Almacenaje de Contenedores" />
   <meta name="twitter:description" content="Centro logístico en Lázaro Cárdenas, Michoacán. Resguardo de contenedores, transporte y asesoría aduanal." />
-  <meta name="twitter:image" content="assets/img/Instalaciones.png" />
+  <meta name="twitter:image" content="https://patiolaesperanza.com.mx/assets/img/Instalaciones.png" />
+  <meta name="twitter:image:alt" content="Instalaciones Patio La Esperanza — centro logístico en Lázaro Cárdenas" />
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
@@ -32,6 +37,9 @@
     "url": "https://patiolaesperanza.com.mx",
     "telephone": "+527535377838",
     "email": "ventas@patiolaesperanza.com.mx",
+    "image": "https://patiolaesperanza.com.mx/assets/img/Instalaciones.png",
+    "logo": "https://patiolaesperanza.com.mx/assets/img/EsperanzaLogo.png",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Autopista Morelia-Lázaro Cárdenas No. 135, Isla del Cayacal",
@@ -52,10 +60,22 @@
       "closes": "23:59"
     },
     "hasMap": "https://maps.google.com/?q=17.95,-102.19",
-    "areaServed": ["Michoacán", "Guerrero", "México"],
-    "serviceType": ["Almacenaje de contenedores", "Transporte terrestre", "Maniobras de carga y descarga", "Asesoría aduanal", "Vigilancia 24/7"]
+    "areaServed": [
+      {"@type": "State", "name": "Michoacán"},
+      {"@type": "State", "name": "Guerrero"},
+      {"@type": "Country", "name": "México"}
+    ],
+    "serviceType": ["Almacenaje de contenedores", "Transporte terrestre", "Maniobras de carga y descarga", "Asesoría aduanal", "Vigilancia 24/7"],
+    "sameAs": []
   }
   </script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/EsperanzaLogo.png" />
+  <link rel="apple-touch-icon" href="assets/img/EsperanzaLogo.png" />
+  <!-- Preconnect para fuentes externas (rendimiento) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
@@ -191,7 +211,7 @@
 
       <!-- Video promocional -->
       <div class="promo-video">
-        <video controls width="100%" preload="metadata">
+        <video controls width="100%" preload="metadata" aria-label="Video promocional de Patio La Esperanza — instalaciones y operaciones logísticas">
           <source src="assets/img/promo.mp4" type="video/mp4" />
           Tu navegador no soporta la reproducción de video.
         </video>
@@ -199,9 +219,9 @@
 
       <!-- Galería -->
       <div class="gallery-grid">
-        <img src="assets/img/superfice.jpg" alt="Superficie del patio" />
-        <img src="assets/img/montacargas.jpg" alt="Montacargas en operación" />
-        <img src="assets/img/imagenes-31.png" alt="Instalaciones" />
+        <img src="assets/img/superfice.jpg" alt="Superficie pavimentada del patio logístico Patio La Esperanza" loading="lazy" />
+        <img src="assets/img/montacargas.jpg" alt="Montacargas especializado en operación dentro de las bodegas" loading="lazy" />
+        <img src="assets/img/imagenes-31.png" alt="Vista general de las instalaciones de Patio La Esperanza en Lázaro Cárdenas" loading="lazy" />
       </div>
     </div>
   </section>
@@ -294,9 +314,9 @@
 
       <!-- Galería de instalaciones de servicios -->
       <div class="services-gallery">
-        <img src="assets/img/servicios1.jpg" alt="Instalaciones de servicio" />
-        <img src="assets/img/servicios2.jpg" alt="Operaciones en patio" />
-        <img src="assets/img/grua-reachstacker.png" alt="Grúa reach stacker cargando contenedor" />
+        <img src="assets/img/servicios1.jpg" alt="Área de maniobras y carga en las instalaciones de Patio La Esperanza" loading="lazy" />
+        <img src="assets/img/servicios2.jpg" alt="Operaciones de descarga de contenedores en el patio logístico" loading="lazy" />
+        <img src="assets/img/grua-reachstacker.png" alt="Grúa reach stacker de 45 toneladas cargando contenedor en Patio La Esperanza" loading="lazy" />
       </div>
 
     </div>
@@ -399,6 +419,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
