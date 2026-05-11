@@ -73,6 +73,10 @@ document.querySelectorAll('.service-item, .contact-card, .gallery-grid img, .nos
   observer.observe(el);
 });
 
+// --- Año dinámico en footer ---
+const footerYear = document.getElementById('footer-year');
+if (footerYear) footerYear.textContent = new Date().getFullYear();
+
 // Estilos de animación inyectados en JS para no requerir otro archivo
 const style = document.createElement('style');
 style.textContent = `

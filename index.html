@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Patio La Esperanza | Almacenaje y Logística de Contenedores en Lázaro Cárdenas</title>
+  <title>Patio La Esperanza | Logística en Lázaro Cárdenas</title>
   <meta name="description" content="Patio logístico en Ciudad Lázaro Cárdenas, Michoacán. Resguardo de contenedores, transporte terrestre, maniobras de carga y asesoría aduanal. 7,000 m² de instalaciones. Tel: 753 537 7838." />
   <meta name="keywords" content="patio contenedores Lázaro Cárdenas, logística Michoacán, almacenaje contenedores, transporte terrestre contenedores, asesoría aduanal, resguardo contenedores, bodega desconsolidación" />
   <meta name="robots" content="index, follow" />
@@ -32,13 +32,17 @@
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://patiolaesperanza.com.mx",
     "name": "Patio La Esperanza",
     "description": "Centro logístico especializado en resguardo, manejo y envío de contenedores y mercancías en Ciudad Lázaro Cárdenas, Michoacán.",
     "url": "https://patiolaesperanza.com.mx",
     "telephone": "+527535377838",
     "email": "ventas@patiolaesperanza.com.mx",
     "image": "https://patiolaesperanza.com.mx/assets/img/Instalaciones.png",
-    "logo": "https://patiolaesperanza.com.mx/assets/img/EsperanzaLogo.png",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://patiolaesperanza.com.mx/assets/img/EsperanzaLogo.png"
+    },
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -65,14 +69,14 @@
       {"@type": "State", "name": "Guerrero"},
       {"@type": "Country", "name": "México"}
     ],
-    "serviceType": ["Almacenaje de contenedores", "Transporte terrestre", "Maniobras de carga y descarga", "Asesoría aduanal", "Vigilancia 24/7"],
-    "sameAs": []
+    "serviceType": ["Almacenaje de contenedores", "Transporte terrestre", "Maniobras de carga y descarga", "Asesoría aduanal", "Vigilancia 24/7"]
   }
   </script>
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/img/EsperanzaLogo.png" />
   <link rel="apple-touch-icon" href="assets/img/EsperanzaLogo.png" />
   <!-- Preconnect para fuentes externas (rendimiento) -->
+  <link rel="preload" as="image" href="assets/img/superfice.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
@@ -106,7 +110,7 @@
   <section class="hero" id="inicio" aria-label="Sección de inicio">
     <div class="hero-overlay"></div>
     <div class="hero-content container">
-      <h1>Resguarda, Cuida y Envía<br />con Seguridad</h1>
+      <h1>Resguarda, Cuida y Envía<br />tus Contenedores con Seguridad</h1>
       <p>Soluciones integrales de logística y almacenaje en Lázaro Cárdenas, Michoacán.</p>
       <a href="#contacto" class="btn btn-primary">Contáctanos</a>
       <a href="#servicios" class="btn btn-outline">Nuestros Servicios</a>
@@ -409,7 +413,7 @@
         <img src="assets/img/EsperanzaLogo.png" alt="Patio La Esperanza" />
       </div>
       <div class="footer-text">
-        <p>&copy; 2025 Patio La Esperanza. Todos los derechos reservados.</p>
+        <p>&copy; <span id="footer-year">2026</span> Patio La Esperanza. Todos los derechos reservados.</p>
         <p>Autopista Morelia-Lázaro Cárdenas No. 135, Ciudad Lázaro Cárdenas, Michoacán</p>
       </div>
       <div class="footer-contact">
