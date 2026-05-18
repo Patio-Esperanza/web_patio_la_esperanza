@@ -485,6 +485,89 @@ ul { list-style: none; }
 }
 .services-gallery img:hover { transform: scale(1.03); }
 
+/* Aliados estratégicos */
+.aliados-section {
+  margin-top: 50px;
+}
+.aliados-title {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.aliados-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .aliados-grid { grid-template-columns: 1fr; }
+}
+
+/* Banner individual de aliado */
+.aliado-banner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 36px;
+  background: var(--primary);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+}
+.aliado-icon {
+  font-size: 2.4rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.aliado-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 180px;
+}
+.aliado-label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.aliado-name {
+  font-family: var(--font-head);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+.btn-aliado {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: var(--radius);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-aliado:hover {
+  background: #cf6d17;
+  transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+  .aliado-banner { flex-direction: column; text-align: center; padding: 24px 20px; }
+  .aliado-text { align-items: center; }
+}
+
 /* =============================================
    CONTACTO
    ============================================= */
