@@ -183,7 +183,12 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url('../img/superfice.jpg') center/cover no-repeat;
+  background: #1c2833 url('../img/superfice-1920.jpg') center/cover no-repeat;
+  background-image: -webkit-image-set(url('../img/superfice-1920.webp') type('image/webp'), url('../img/superfice-1920.jpg') type('image/jpeg'));
+  background-image: image-set(url('../img/superfice-1920.webp') type('image/webp'), url('../img/superfice-1920.jpg') type('image/jpeg'));
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding-top: 80px;
 }
 .hero-overlay {
@@ -712,6 +717,12 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .section { padding: 64px 0; }
   .section-header h2 { font-size: 1.9rem; }
+
+  /* Fondo del hero más ligero en móvil */
+  .hero {
+    background-image: -webkit-image-set(url('../img/superfice-1080.webp') type('image/webp'), url('../img/superfice-1920.jpg') type('image/jpeg'));
+    background-image: image-set(url('../img/superfice-1080.webp') type('image/webp'), url('../img/superfice-1920.jpg') type('image/jpeg'));
+  }
 
   /* Nav mobile */
   .hamburger { display: flex; }

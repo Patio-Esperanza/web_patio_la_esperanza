@@ -14,7 +14,7 @@
   <meta property="og:url" content="https://patiolaesperanza.com.mx/" />
   <meta property="og:title" content="Patio La Esperanza | Logística y Almacenaje de Contenedores" />
   <meta property="og:description" content="Centro logístico especializado en Lázaro Cárdenas, Michoacán. Resguardo, maniobras, transporte y asesoría aduanal para importadores y exportadores." />
-  <meta property="og:image" content="https://patiolaesperanza.com.mx/assets/img/Instalaciones.png" />
+  <meta property="og:image" content="https://patiolaesperanza.com.mx/assets/img/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Instalaciones Patio La Esperanza — centro logístico en Lázaro Cárdenas" />
@@ -25,7 +25,7 @@
   <meta name="twitter:site" content="@PatioLaEsperanza" />
   <meta name="twitter:title" content="Patio La Esperanza | Logística y Almacenaje de Contenedores" />
   <meta name="twitter:description" content="Centro logístico en Lázaro Cárdenas, Michoacán. Resguardo de contenedores, transporte y asesoría aduanal." />
-  <meta name="twitter:image" content="https://patiolaesperanza.com.mx/assets/img/Instalaciones.png" />
+  <meta name="twitter:image" content="https://patiolaesperanza.com.mx/assets/img/og-image.jpg" />
   <meta name="twitter:image:alt" content="Instalaciones Patio La Esperanza — centro logístico en Lázaro Cárdenas" />
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -38,7 +38,7 @@
     "url": "https://patiolaesperanza.com.mx",
     "telephone": "+527535377838",
     "email": "ventas@patiolaesperanza.com.mx",
-    "image": "https://patiolaesperanza.com.mx/assets/img/Instalaciones.png",
+    "image": "https://patiolaesperanza.com.mx/assets/img/og-image.jpg",
     "logo": {
       "@type": "ImageObject",
       "url": "https://patiolaesperanza.com.mx/assets/img/EsperanzaLogo.png"
@@ -73,18 +73,21 @@
   }
   </script>
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/img/EsperanzaLogo.png" />
-  <link rel="apple-touch-icon" href="assets/img/EsperanzaLogo.png" />
-  <!-- Preconnect para fuentes externas (rendimiento) -->
-  <link rel="preload" as="image" href="assets/img/superfice.jpg" />
+  <link rel="icon" type="image/png" href="assets/img/favicon-180.png" sizes="180x180" />
+  <link rel="apple-touch-icon" href="assets/img/favicon-180.png" />
+  <!-- Preconnect + preload del recurso LCP (rendimiento) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" as="image" href="assets/img/superfice-1920.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/img/superfice-1080.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Google Fonts (carga asíncrona, no bloquea el render) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" /></noscript>
+  <!-- Font Awesome (carga asíncrona, no bloquea el render) -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
 </head>
 <body>
 
@@ -92,7 +95,10 @@
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a href="#inicio" class="logo">
-        <img src="assets/img/EsperanzaLogo.png" alt="Patio La Esperanza Logo" />
+        <picture>
+          <source srcset="assets/img/EsperanzaLogo.webp" type="image/webp" />
+          <img src="assets/img/EsperanzaLogo.png" alt="Patio La Esperanza Logo" width="94" height="62" fetchpriority="high" />
+        </picture>
       </a>
       <button class="hamburger" id="hamburger" aria-label="Abrir menú">
         <span></span><span></span><span></span>
@@ -145,7 +151,10 @@
       </div>
       <div class="nosotros-grid">
         <div class="nosotros-img">
-          <img src="assets/img/Instalaciones.png" alt="Instalaciones Patio La Esperanza" />
+          <picture>
+            <source srcset="assets/img/Instalaciones.webp" type="image/webp" />
+            <img src="assets/img/Instalaciones.jpg" alt="Instalaciones Patio La Esperanza" width="1100" height="2040" loading="lazy" decoding="async" />
+          </picture>
         </div>
         <div class="nosotros-text">
           <h3>¿Quiénes Somos?</h3>
@@ -215,7 +224,7 @@
 
       <!-- Video promocional -->
       <div class="promo-video">
-        <video controls width="100%" preload="metadata" aria-label="Video promocional de Patio La Esperanza — instalaciones y operaciones logísticas">
+        <video controls width="100%" preload="none" poster="assets/img/promo-poster.jpg" aria-label="Video promocional de Patio La Esperanza — instalaciones y operaciones logísticas">
           <source src="assets/img/promo.mp4" type="video/mp4" />
           Tu navegador no soporta la reproducción de video.
         </video>
@@ -223,9 +232,18 @@
 
       <!-- Galería -->
       <div class="gallery-grid">
-        <img src="assets/img/superfice.jpg" alt="Superficie pavimentada del patio logístico Patio La Esperanza" loading="lazy" />
-        <img src="assets/img/montacargas.jpg" alt="Montacargas especializado en operación dentro de las bodegas" loading="lazy" />
-        <img src="assets/img/imagenes-31.png" alt="Vista general de las instalaciones de Patio La Esperanza en Lázaro Cárdenas" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/superfice-1920.webp" type="image/webp" />
+          <img src="assets/img/superfice-1920.jpg" alt="Superficie pavimentada del patio logístico Patio La Esperanza" width="1920" height="1080" loading="lazy" decoding="async" />
+        </picture>
+        <picture>
+          <source srcset="assets/img/montacargas.webp" type="image/webp" />
+          <img src="assets/img/montacargas.jpg" alt="Montacargas especializado en operación dentro de las bodegas" width="1100" height="619" loading="lazy" decoding="async" />
+        </picture>
+        <picture>
+          <source srcset="assets/img/imagenes-31.webp" type="image/webp" />
+          <img src="assets/img/imagenes-31.jpg" alt="Vista general de las instalaciones de Patio La Esperanza en Lázaro Cárdenas" width="1100" height="1868" loading="lazy" decoding="async" />
+        </picture>
       </div>
     </div>
   </section>
@@ -244,7 +262,7 @@
 
         <div class="service-item">
           <div class="service-icon">
-            <img src="assets/img/container.png" alt="Resguardo de contenedores" />
+            <img src="assets/img/container.png" alt="Resguardo de contenedores" width="64" height="64" loading="lazy" decoding="async" />
           </div>
           <h4>Resguardo de Contenedores</h4>
           <p><span class="highlight-stat">5 hectáreas</span> de superficie para resguardo de contenedores con mercancía y vacíos, garantizando la integridad de su carga.</p>
@@ -252,7 +270,7 @@
 
         <div class="service-item">
           <div class="service-icon">
-            <img src="assets/img/trucks.png" alt="Maniobras de carga y descarga" />
+            <img src="assets/img/trucks.png" alt="Maniobras de carga y descarga" width="64" height="64" loading="lazy" decoding="async" />
           </div>
           <h4>Maniobras de Carga y Descarga</h4>
           <p>Maniobras de carga y descarga de contenedores con 3 grúas RS de 45 toneladas y 5 rampas de operación simultánea.</p>
@@ -260,7 +278,7 @@
 
         <div class="service-item">
           <div class="service-icon">
-            <img src="assets/img/warehouse.png" alt="Transporte terrestre" />
+            <img src="assets/img/warehouse.png" alt="Transporte terrestre" width="64" height="64" loading="lazy" decoding="async" />
           </div>
           <h4>Transporte Terrestre</h4>
           <p>Transporte terrestre de contenedores con flota propia de tractocamiones para carga sencilla y full, con cobertura nacional.</p>
@@ -268,7 +286,7 @@
 
         <div class="service-item">
           <div class="service-icon">
-            <img src="assets/img/forklift.png" alt="Bodega de desconsolidación" />
+            <img src="assets/img/forklift.png" alt="Bodega de desconsolidación" width="64" height="64" loading="lazy" decoding="async" />
           </div>
           <h4>Bodega de Desconsolidación</h4>
           <p>Bodega de desconsolidación y resguardo de mercancías con montacargas especializados y operadores certificados.</p>
@@ -276,7 +294,7 @@
 
         <div class="service-item">
           <div class="service-icon">
-            <img src="assets/img/security-camera.png" alt="Vigilancia 24/7" />
+            <img src="assets/img/security-camera.png" alt="Vigilancia 24/7" width="64" height="64" loading="lazy" decoding="async" />
           </div>
           <h4>Vigilancia 24/7</h4>
           <p>Circuito cerrado de vigilancia las 24 horas del día para garantizar la seguridad de su mercancía en todo momento.</p>
@@ -284,7 +302,7 @@
 
         <div class="service-item">
           <div class="service-icon">
-            <img src="assets/img/documents.png" alt="Asesoría aduanal" />
+            <img src="assets/img/documents.png" alt="Asesoría aduanal" width="64" height="64" loading="lazy" decoding="async" />
           </div>
           <h4>Asesoría Aduanal</h4>
           <p>Asesoría y despacho aduanal a través de Loginco Logística Integral &amp; Servicios de Comercio Exterior S.C.</p>
@@ -292,7 +310,7 @@
 
         <div class="service-item">
           <div class="service-icon">
-            <img src="assets/img/locations.png" alt="Rastreo de unidades" />
+            <img src="assets/img/locations.png" alt="Rastreo de unidades" width="64" height="64" loading="lazy" decoding="async" />
           </div>
           <h4>Rastreo de Unidades</h4>
           <p>Custodias y rastreo satelital de nuestras unidades para monitoreo en tiempo real de su carga durante el trayecto.</p>
@@ -300,7 +318,7 @@
 
         <div class="service-item">
           <div class="service-icon">
-            <img src="assets/img/gasoline-pump.png" alt="Estación de Combustible" />
+            <img src="assets/img/gasoline-pump.png" alt="Estación de Combustible" width="64" height="64" loading="lazy" decoding="async" />
           </div>
           <h4>Estación de Combustible</h4>
           <p>Abastecimiento de combustible en sitio para optimizar tiempos de operación y reducir costos logísticos.</p>
@@ -308,7 +326,7 @@
 
         <div class="service-item">
           <div class="service-icon">
-            <img src="assets/img/customer-service.png" alt="Atención al Cliente" />
+            <img src="assets/img/customer-service.png" alt="Atención al Cliente" width="64" height="64" loading="lazy" decoding="async" />
           </div>
           <h4>Atención al Cliente</h4>
           <p>Personal de asesoría y atención disponible para orientar y apoyar en todos sus procesos logísticos y aduanales.</p>
@@ -318,9 +336,18 @@
 
       <!-- Galería de instalaciones de servicios -->
       <div class="services-gallery">
-        <img src="assets/img/servicios1.jpg" alt="Área de maniobras y carga en las instalaciones de Patio La Esperanza" loading="lazy" />
-        <img src="assets/img/servicios2.jpg" alt="Operaciones de descarga de contenedores en el patio logístico" loading="lazy" />
-        <img src="assets/img/grua-reachstacker.png" alt="Grúa reach stacker de 45 toneladas cargando contenedor en Patio La Esperanza" loading="lazy" />
+        <picture>
+          <source srcset="assets/img/servicios1.webp" type="image/webp" />
+          <img src="assets/img/servicios1.jpg" alt="Área de maniobras y carga en las instalaciones de Patio La Esperanza" width="1100" height="619" loading="lazy" decoding="async" />
+        </picture>
+        <picture>
+          <source srcset="assets/img/servicios2.webp" type="image/webp" />
+          <img src="assets/img/servicios2.jpg" alt="Operaciones de descarga de contenedores en el patio logístico" width="1100" height="619" loading="lazy" decoding="async" />
+        </picture>
+        <picture>
+          <source srcset="assets/img/grua-reachstacker.webp" type="image/webp" />
+          <img src="assets/img/grua-reachstacker.jpg" alt="Grúa reach stacker de 45 toneladas cargando contenedor en Patio La Esperanza" width="1100" height="604" loading="lazy" decoding="async" />
+        </picture>
       </div>
 
       <!-- Aliados estratégicos -->
@@ -437,7 +464,10 @@
   <footer class="footer" role="contentinfo">
     <div class="container footer-inner">
       <div class="footer-logo">
-        <img src="assets/img/EsperanzaLogo.png" alt="Patio La Esperanza" />
+        <picture>
+          <source srcset="assets/img/EsperanzaLogo.webp" type="image/webp" />
+          <img src="assets/img/EsperanzaLogo.png" alt="Patio La Esperanza" width="72" height="48" loading="lazy" />
+        </picture>
       </div>
       <div class="footer-text">
         <p>&copy; <span id="footer-year">2026</span> Patio La Esperanza. Todos los derechos reservados.</p>
