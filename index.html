@@ -75,17 +75,52 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/img/favicon-180.png" sizes="180x180" />
   <link rel="apple-touch-icon" href="assets/img/favicon-180.png" />
-  <!-- Preconnect + preload del recurso LCP (rendimiento) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <!-- Fuentes autoalojadas (sin CDN externo, no bloquean el render) -->
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/montserrat-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/opensans-latin.woff2" crossorigin />
+  <!-- Preload del recurso LCP (fondo del hero) -->
   <link rel="preload" as="image" href="assets/img/superfice-1920.webp" type="image/webp" media="(min-width: 769px)" fetchpriority="high" />
   <link rel="preload" as="image" href="assets/img/superfice-1080.webp" type="image/webp" media="(max-width: 768px)" fetchpriority="high" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Google Fonts (carga asíncrona, no bloquea el render) -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" /></noscript>
+
+  <!-- CSS crítico en línea: permite la primera pintura sin esperar a la hoja externa -->
+  <style>
+    @font-face{font-family:'Montserrat';font-style:normal;font-weight:100 900;font-display:swap;src:url('assets/fonts/montserrat-latin.woff2') format('woff2')}
+    @font-face{font-family:'Open Sans';font-style:normal;font-weight:300 800;font-display:swap;src:url('assets/fonts/opensans-latin.woff2') format('woff2')}
+    :root{--primary:#1a5276;--accent:#e67e22;--dark:#1c2833;--text:#4d4d4d;--white:#fff;--font-head:'Montserrat',system-ui,sans-serif;--font-body:'Open Sans',system-ui,sans-serif;--radius:8px;--transition:all .3s ease}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:var(--font-body);color:var(--text);line-height:1.7;overflow-x:hidden}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:90%;max-width:1200px;margin:0 auto}
+    .btn{display:inline-block;padding:14px 32px;border-radius:var(--radius);font-family:var(--font-head);font-weight:700;font-size:.95rem;letter-spacing:1px;cursor:pointer;transition:var(--transition);border:2px solid transparent}
+    .btn-primary{background:var(--accent);color:var(--white);border-color:var(--accent)}
+    .btn-outline{background:transparent;color:var(--white);border-color:var(--white);margin-left:12px}
+    .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,82,118,.97);padding:14px 0;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between}
+    .logo img{height:62px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(255,255,255,.6)) drop-shadow(0 1px 3px rgba(0,0,0,.4))}
+    .nav-links{display:flex;gap:36px}
+    .nav-links a{font-family:var(--font-head);font-weight:600;font-size:.9rem;color:var(--white);letter-spacing:1px;text-transform:uppercase}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+    .hamburger span{display:block;width:26px;height:3px;background:var(--white);border-radius:3px;transition:var(--transition)}
+    .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;background:#1c2833 url('assets/img/superfice-1920.jpg') center/cover no-repeat;background-image:-webkit-image-set(url('assets/img/superfice-1920.webp') type('image/webp'),url('assets/img/superfice-1920.jpg') type('image/jpeg'));background-image:image-set(url('assets/img/superfice-1920.webp') type('image/webp'),url('assets/img/superfice-1920.jpg') type('image/jpeg'));background-position:center;background-size:cover;background-repeat:no-repeat;padding-top:80px}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,82,118,.88) 0%,rgba(28,40,51,.75) 100%)}
+    .hero-content{position:relative;z-index:1;padding:80px 0 40px}
+    .hero-content h1{font-family:var(--font-head);font-size:clamp(2rem,5vw,3.6rem);font-weight:800;color:var(--white);line-height:1.2;margin-bottom:20px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+    .hero-content p{font-size:1.15rem;color:rgba(255,255,255,.88);max-width:560px;margin-bottom:36px}
+    .hero-stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15);border-top:1px solid rgba(255,255,255,.2);margin-top:auto}
+    .stat{display:flex;flex-direction:column;align-items:center;padding:28px 16px;background:rgba(26,82,118,.6)}
+    .stat-number{font-family:var(--font-head);font-size:2.2rem;font-weight:800;color:var(--white);line-height:1}
+    .stat-label{font-size:.82rem;color:rgba(255,255,255,.85);text-align:center;margin-top:6px;text-transform:uppercase;letter-spacing:.5px}
+    @media(max-width:992px){.hero-stats{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}.hero{background-image:-webkit-image-set(url('assets/img/superfice-1080.webp') type('image/webp'),url('assets/img/superfice-1920.jpg') type('image/jpeg'));background-image:image-set(url('assets/img/superfice-1080.webp') type('image/webp'),url('assets/img/superfice-1920.jpg') type('image/jpeg'))}.hero-content{padding:60px 0 30px}.hero-content .btn{display:block;width:fit-content}.hero-content .btn+.btn{margin-top:12px}.btn-outline{margin-left:0}}
+    @media(max-width:400px){.stat{padding:16px 8px}.stat-number{font-size:1.7rem}}
+  </style>
+  <!-- Hoja de estilos completa: carga diferida para no bloquear el render -->
+  <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="assets/css/style.css" /></noscript>
   <!-- Font Awesome (carga asíncrona, no bloquea el render) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
 </head>

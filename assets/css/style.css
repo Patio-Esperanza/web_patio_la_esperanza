@@ -2,6 +2,22 @@
    PATIO LA ESPERANZA — Hoja de Estilos
    ============================================= */
 
+/* ---------- Fuentes autoalojadas (variables, subset latino) ---------- */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/montserrat-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url('../fonts/opensans-latin.woff2') format('woff2');
+}
+
 /* ---------- Variables ---------- */
 :root {
   --primary:    #1a5276;   /* Azul marino */
